@@ -1,0 +1,35 @@
+version: "2.4"
+
+services:
+  postgres:
+    image: postgres:14.4-alpine
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      PSQL_HISTFILE: /root/log/.psql_history
+      POSTGRES_USER: pet_catalog
+      POSTGRES_PASSWORD: pet_catalog
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pet_catalog"]
+      interval: 10s
+      timeout: 2s
+      retries: 10
+    logging:
+      driver: none
+
+  redis:
+    image: redis:5.0-alpine
+    volumes:
+      - redis:/data
+    ports:
+      - "127.0.0.1:6379:6379"
+    restart: on-failure
+    logging:
+      driver: none
+
+volumes:
+  postgresql:
+  redis:
