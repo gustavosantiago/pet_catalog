@@ -1,4 +1,10 @@
 PATH
+  remote: engines/actions
+  specs:
+    actions (0.1.0)
+      rails (>= 7.0.3)
+
+PATH
   remote: engines/discovery
   specs:
     discovery (0.1.0)
@@ -192,6 +198,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actions!
   bootsnap
   debug
   discovery!
