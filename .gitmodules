@@ -1,0 +1,6 @@
+[submodule "engines/actions"]
+	path = engines/actions
+	url = git@github.com:gustavosantiago/pet_catalog_actions.git
+[submodule "engines/discovery"]
+	path = engines/discovery
+	url = git@github.com:gustavosantiago/pet_catalog_discovery.git
