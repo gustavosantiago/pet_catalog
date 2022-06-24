@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  mount Discovery::Engine => "/", as: 'discovery'
+  mount Discovery::Engine => '/discovery'
+  mount Actions::Engine => '/actions'
 end
